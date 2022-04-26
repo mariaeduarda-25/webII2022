@@ -25,7 +25,7 @@ class Crud
       return false;
     }
   }
-  public function  insert($campos = NULL, $valores = NULL)
+  public function insert($campos = NULL, $valores = NULL)
   {
     if (!$campos || !$valores) {
       echo "Campos e valores não informados!";
@@ -43,5 +43,22 @@ class Crud
       }
     }
   }
+  public function delete($condicao = NULL)
+  {
+    if (!$condicao) {
+      echo "Condição não informada!";
+      return false;
+    } else {
+      $conexao = Transaction::get();
+      $sql = "DELETE FROM $this->tabela WHERE $condicao";
+      $resultado = $conexao->query($sql);
+      if ($resultado->rowCount() > 0) {
+        echo "Registro excluído com sucesso!";
+        return true;
+      } else {
+        echo "Erro ao excluir registro!";
+        return false;
+      }
+    }
+  }
 }
-

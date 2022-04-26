@@ -1,0 +1,32 @@
+<table>
+    <thead>
+      <tr>
+        <th>Estilo</th>
+        <th>Cor</th>
+        <th>Tamanho</th>
+        <th>Editar</th>
+        <th>Apagar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {linha}
+      <tr>
+        <td>{estilo}</td>
+        <td>{cor}</td>
+        <td>{tamanho}</td>
+        <td>
+          <button type="button">Editar</button>
+        </td>
+        <td>
+          <button
+            type="button"
+            onclick="if(confirm('Deseja realmente apagar?'))
+              location.href='?class=Tabela&method=remover&id={id}'"
+          >
+            Remover
+          </button>
+        </td>
+      </tr>
+      {/linha}
+    </tbody>
+  </table>
