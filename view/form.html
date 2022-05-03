@@ -1,15 +1,16 @@
 <form method="post" action="?class=Form&method=salvar">
+  <input type="hidden" name="id" value="{id}" />
     <div>
       <label for="estilo">Estilo:</label>
-      <input type="text" name="estilo" id="estilo" required maxlength="100" />
+      <input type="text" name="estilo" id="estilo" required maxlength="100" value="{estilo}"  />
     </div>
     <div>
       <label for="cor">Cor:</label>
-      <input type="color" name= "cor" id="cor" required maxlength="100" />
+      <input type="color" name= "cor" id="cor" required maxlength="100" value="{cor}"  />
     </div>
     <div>
       <label for="tamanho">Tamanho:</label>
-      <input type="number" name="tamanho" id="tamanho" required />
+      <input type="number" name="tamanho" id="tamanho" required  value="{tamanho}" />
     </div>
     <div>
       <button type="submit">Salvar</button>
