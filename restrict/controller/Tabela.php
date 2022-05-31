@@ -13,7 +13,7 @@ class Tabela
       Transaction::get();
       $sapato = new Crud("sapato");
       $resultado = $sapato->select();
-      $tabela = new Template("view/tabela.html");
+      $tabela = new Template("restrict/view/tabela.html");
       if (is_array($resultado)) {
         $tabela->set("linha", $resultado);
         $this->message = $tabela->saida();
@@ -50,7 +50,7 @@ class Tabela
     if (is_string($this->error)) {
       return $this->message;
     } else {
-      $msg = new Template("view/msg.html");
+      $msg = new Template("shared/view/msg.html");
       if ($this->error) {
         $msg->set("cor", "danger");
       } else {

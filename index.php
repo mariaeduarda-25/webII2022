@@ -25,7 +25,7 @@ Session::freeSession();
 // Front Controller
 class Aplicacao
 {
-  static private $app = "/modelo";
+  static private $app = "/MariaEduardaS";
   public static function run()
   {
     $layout = new Template("public/view/layout.html");
@@ -45,7 +45,7 @@ class Aplicacao
       if (method_exists($pagina, $method)) {
         $pagina->$method();
       } else {
-        $pagina->controller();
+      $pagina->controller();
       }
       $layout->set('conteudo', $pagina->getMessage());
     }

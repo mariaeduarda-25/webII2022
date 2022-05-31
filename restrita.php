@@ -7,8 +7,8 @@ function classLoader($class)
   $pastas = array (
     "shared/controller",
     "shared/model",
-    "public/controller",
-    "public/model"
+    "restrict/controller",
+    "restrict/model"
   );
   foreach ($pastas as $pasta){
     $arquivo = "{$pasta}/{$class}.php";
@@ -25,8 +25,8 @@ if(!Session::getValue("id")){
 // Front Controller
 class Aplicacao
 {
-  static public $path = "/modelo";
-  static private $uri = "/modelo/restrita.php";
+  static public $path = "/MariaEduardaS";
+  static private $uri = "/MariaEduardaS/restrita.php";
   public static function run()
   {
     $layout = new Template("restrict/view/layout.html");
